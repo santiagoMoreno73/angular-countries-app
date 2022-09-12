@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { ByCapitalComponent } from './app/country/pages/by-capital/by-capital.component';
 import { ByCountryComponent } from './app/country/pages/by-country/by-country.component';
 import { ByRegionComponent } from './app/country/pages/by-region/by-region.component';
@@ -32,9 +32,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [],
-  exports: [],
-
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
   providers: [],
 })
 export class NameModule {}
