@@ -8,19 +8,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let country of countriesResp; let i = index">
+    <tr
+      class="animate__animated animate__fadeIn animate__faster"
+      *ngFor="let country of countriesResp; let i = index"
+    >
       <td>{{ i + 1 }}</td>
       <td>
-        <img
-          class="small-flag"
-          src="{{ country.flags.png }}"
-          alt="flag country"
-        />
+        <img class="small-flag" src="{{ country.flag }}" alt="flag country" />
       </td>
-      <td>{{ country.name.common }}</td>
+      <td>{{ country.capital }}, {{ country.name }}</td>
       <td>{{ country.population | number }}</td>
       <td>
-        <a [routerLink]="['/country', country.cca2]">Ver más ...</a>
+        <a [routerLink]="['/country', country.alpha2Code]">Ver más ...</a>
       </td>
     </tr>
   </tbody>
